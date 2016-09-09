@@ -23,9 +23,9 @@ def stdoutRedirected(to=os.devnull):
         finally:
             _redirect_stdout(to=old_stdout)
 
-def unrtf(rtf_data, output_file):
+def unrtf(rtf_data, output_file, no_pict_mode=True):
     assert rtf_data is not None
     if rtf_data.strip() == '':
         return ''
     with stdoutRedirected(to=output_file):
-        _unrtf.unrtf(rtf_data)
+        _unrtf.unrtf(rtf_data, no_pict_mode)

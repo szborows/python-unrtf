@@ -20,8 +20,8 @@ unrtf_c_sources = list(map(lambda f: 'unrtf_ext/src/{}'.format(f), [
    'user.c',
    'util.c',
    'word.c',
-   'lib.c',
-   'pylib.c',
+   'lib.cpp',
+   'pylib.cpp',
 ]))
 
 unrtf_conf_files = list(map(lambda f: 'unrtf_ext/config/{}'.format(f), [

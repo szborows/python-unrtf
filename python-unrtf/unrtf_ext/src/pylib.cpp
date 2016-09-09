@@ -8,14 +8,15 @@
 #include "lib.h"
 
 static PyObject * unrtf_(PyObject * self, PyObject * args) {
-    const char * input;
-    if (!PyArg_ParseTuple(args, "s", &input)) {
+    char * input;
+    int nopict_mode;
+    if (!PyArg_ParseTuple(args, "si", &input, &nopict_mode)) {
         return NULL;
     }
 
     // XXX strlen is unsafe...
     FILE * mfd_in = fmemopen(input, strlen(input), "r");
-    int return_value = unrtf(mfd_in);
+    int return_value = unrtf(mfd_in, !!nopict_mode);
     fflush(stdout);
     fclose(mfd_in);
 

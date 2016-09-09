@@ -14,4 +14,4 @@ extern int no_remap_mode;
 extern OutputPersonality *op;
 
 OutputPersonality * get_config(char *name, OutputPersonality *op);
-int unrtf(FILE *);
+int unrtf(FILE * fp, bool no_pict_mode_);
