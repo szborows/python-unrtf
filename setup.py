@@ -42,9 +42,23 @@ unrtf_module = Extension('_unrtf',
 
 setup (name = 'unrtf',
        version = '0.1.0',
-       description = 'unrtf python bindings',
+       description = 'GNU unrtf python bindings',
        author = 'Sławomir Zborowski',
        author_email = 'slawomir.zborowski@nokia.com',
+       url = 'https://github.com/szborows/python-unrtf',
+       license = 'GNU General Public License v3 (GPLv3)',
        py_modules=['unrtf'],
        ext_modules = [unrtf_module],
-       data_files=[('/usr/local/share/python-unrtf/', unrtf_conf_files)])
+       data_files = [('/usr/local/share/python-unrtf/', unrtf_conf_files)],
+       keywords = 'unrtf rtf',
+       classifiers = [
+           'Development Status :: 3 - Alpha',
+           'Environment :: Console',
+           'Intended Audience :: Developers',
+           'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+           'Operating System :: POSIX',
+           'Programming Language :: C',
+           'Programming Language :: Python :: 3 :: Only',
+           'Programming Language :: Python :: 3.5',
+           'Topic :: Utilities'
+       ])
