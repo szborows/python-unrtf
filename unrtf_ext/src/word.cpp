@@ -19,54 +19,14 @@
    The maintainer is reachable by electronic mail at daved@physiol.usyd.edu.au
 =============================================================================*/
 
-
-/*----------------------------------------------------------------------
- * Module name:    word
- * Author name:    Zachary Smith
- * Create date:    01 Sep 00
- * Purpose:        Management of Word objects, which contain strings
- *                 as well as other Words.
- *----------------------------------------------------------------------
- * Changes:
- * 14 Oct 00, tuorfa@yahoo.com: fixed \fs bug (# is 2X the point size).
- * 14 Oct 00, tuorfa@yahoo.com: fixed table data printing.
- * 14 Oct 00, tuorfa@yahoo.com: protection against null entries in \info
- * 14 Oct 00, tuorfa@yahoo.com: fixed printing of <body> again
- * 14 Oct 00, tuorfa@yahoo.com: fixed closure of tables
- * 15 Oct 00, tuorfa@yahoo.com: fixed font attributes preceding <tr><td>
- * 15 Oct 00, tuorfa@yahoo.com: attributes now continue if >1 \cell in group
- * 15 Oct 00, tuorfa@yahoo.com: fixed font-size bug, lack of </head>
- *  7 Nov 00, tuorfa@yahoo.com: fixed \'## translatin bug
- *  8 Apr 01, tuorfa@yahoo.com: added check for out of memory after malloc
- * 21 Apr 01, tuorfa@yahoo.com: bug fixes regarding author, date
- * 21 Apr 01, tuorfa@yahoo.com: added paragraph alignment
- * 21 Apr 01, tuorfa@yahoo.com: fix for words getting lost after \par
- * 24 Jul 01, tuorfa@yahoo.com: moved conversion code to convert.c
- * 22 Sep 01, tuorfa@yahoo.com: moved word_dump to here from parse.c
- * 22 Sep 01, tuorfa@yahoo.com: added function-level comment blocks
- * 29 Mar 05, daved@physiol.usyd.edu.au: changes requested by ZT Smith
- * 16 Dec 07, daved@physiol.usyd.edu.au: updated to GPL v3
- *--------------------------------------------------------------------*/
-
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
-#ifdef HAVE_STDIO_H
-#include <stdio.h>
-#endif
-
-#ifdef HAVE_STDLIB_H
-#include <stdlib.h>
-#endif
-
-#ifdef HAVE_CTYPE_H
-#include <ctype.h>
-#endif
-
-#ifdef HAVE_STRING_H
-#include <string.h>
-#endif
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cstring>
 
 #include "defs.h"
 #include "parse.h"

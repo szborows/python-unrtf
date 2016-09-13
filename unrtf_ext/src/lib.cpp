@@ -35,8 +35,6 @@ int verbose_mode = FALSE;  /* TRUE => Output additional informations about unrtf
 int no_remap_mode = FALSE; /* don't remap codepoints */
 int quiet = FALSE;       /* TRUE => don't output header comments */
 
-char * search_path = DEFAULT_UNRTF_SEARCH_PATH;
-
 FontEntry font_table[MAX_FONTS];
 int total_fonts = 0;
 
@@ -64,6 +62,7 @@ get_config(char *name, OutputPersonality *op)
 
 
 int unrtf(FILE * fp, bool nopict_mode_) {
+    search_path = DEFAULT_UNRTF_SEARCH_PATH;
     if (op == NULL)
     {
         op = get_config(DEFAULT_OUTPUT, op);

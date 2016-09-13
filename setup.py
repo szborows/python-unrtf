@@ -42,7 +42,7 @@ unrtf_module = Extension('_unrtf',
                     include_dirs = ['./unrtf_ext/src'])
 
 setup (name = 'unrtf',
-       version = '0.1.6',
+       version = '0.1.7',
        description = 'GNU unrtf python bindings',
        author = 'Sławomir Zborowski',
        author_email = 'slawomir.zborowski@nokia.com',
