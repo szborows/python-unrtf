@@ -259,7 +259,7 @@ extern void op_begin_std_fontsize(OutputPersonality *, int);
 extern void op_end_std_fontsize(OutputPersonality *, int);
 
 void add_alias(OutputPersonality *op, int nr, char *text);
-const char *get_alias(OutputPersonality *op, int nr);
+char *get_alias(OutputPersonality *op, int nr);
 
 
 #endif /* _OUTPUT_H_INCLUDED_ */

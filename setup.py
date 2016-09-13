@@ -7,19 +7,19 @@ if not version[0] == '3':
 from distutils.core import setup, Extension
 
 unrtf_c_sources = list(map(lambda f: 'unrtf_ext/src/{}'.format(f), [
-   'attr.c',
-   'convert.c',
-   'error.c',
-   'hash.c',
-   'malloc.c',
-   'my_iconv.c',
-   'output.c',
-   'parse.c',
-   'path.c',
-   'unicode.c',
-   'user.c',
-   'util.c',
-   'word.c',
+   'attr.cpp',
+   'convert.cpp',
+   'error.cpp',
+   'hash.cpp',
+   'malloc.cpp',
+   'my_iconv.cpp',
+   'output.cpp',
+   'parse.cpp',
+   'path.cpp',
+   'unicode.cpp',
+   'user.cpp',
+   'util.cpp',
+   'word.cpp',
    'lib.cpp',
    'pylib.cpp',
 ]))
@@ -38,10 +38,11 @@ unrtf_conf_files = list(map(lambda f: 'unrtf_ext/config/{}'.format(f), [
 unrtf_module = Extension('_unrtf',
                     define_macros = [('PACKAGE_VERSION', '"1"'),
                                      ('PKGDATADIR', '"/usr/local/share/python-unrtf/"')],
-                    sources = unrtf_c_sources)
+                    sources = unrtf_c_sources,
+                    include_dirs = ['./unrtf_ext/src'])
 
 setup (name = 'unrtf',
-       version = '0.1.0',
+       version = '0.1.6',
        description = 'GNU unrtf python bindings',
        author = 'Sławomir Zborowski',
        author_email = 'slawomir.zborowski@nokia.com',

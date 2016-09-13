@@ -22,59 +22,42 @@
    The maintainer is reachable by electronic mail at daved@physiol.usyd.edu.au
 =============================================================================*/
 
-
-/*----------------------------------------------------------------------
- * Module name:    attr
- * Author name:    Zachary Smith
- * Create date:    1 Aug 2001
- * Purpose:        Definitions for attribute stack module.
- *----------------------------------------------------------------------
- * Changes:
- * 01 Aug 01, tuorfa@yahoo.com: moved code over from convert.c
- * 06 Aug 01, tuorfa@yahoo.com: added several attributes
- * 18 Sep 01, tuorfa@yahoo.com: updates for AttrStack paradigm
- * 29 Mar 05, daved@physiol.usyd.edu.au: changes requested by ZT Smith
- * 16 Dec 07, daved@physiol.usyd.edu.au: updated to GPL v3
- * 09 Nov 08, arkadiusz.firus@gmail.com: adopt safe_printf & collection funcs
- * 07 Oct 11, jf@dockes.org: removed unused protocols, added _ATTR_H_INCLUDED_
- *--------------------------------------------------------------------*/
-
 enum
 {
-	ATTR_NONE = 0,
-	ATTR_BOLD, ATTR_ITALIC,
+    ATTR_NONE = 0,
+    ATTR_BOLD, ATTR_ITALIC,
 
-	ATTR_UNDERLINE, ATTR_DOUBLE_UL, ATTR_WORD_UL,
+    ATTR_UNDERLINE, ATTR_DOUBLE_UL, ATTR_WORD_UL,
 
-	ATTR_THICK_UL, ATTR_WAVE_UL,
+    ATTR_THICK_UL, ATTR_WAVE_UL,
 
-	ATTR_DOT_UL, ATTR_DASH_UL, ATTR_DOT_DASH_UL, ATTR_2DOT_DASH_UL,
+    ATTR_DOT_UL, ATTR_DASH_UL, ATTR_DOT_DASH_UL, ATTR_2DOT_DASH_UL,
 
-	ATTR_FONTSIZE, ATTR_STD_FONTSIZE,
-	ATTR_FONTFACE,
-	ATTR_FOREGROUND, ATTR_BACKGROUND,
-	ATTR_CAPS,
-	ATTR_SMALLCAPS,
+    ATTR_FONTSIZE, ATTR_STD_FONTSIZE,
+    ATTR_FONTFACE,
+    ATTR_FOREGROUND, ATTR_BACKGROUND,
+    ATTR_CAPS,
+    ATTR_SMALLCAPS,
 
-	ATTR_SHADOW,
-	ATTR_OUTLINE,
-	ATTR_EMBOSS,
-	ATTR_ENGRAVE,
+    ATTR_SHADOW,
+    ATTR_OUTLINE,
+    ATTR_EMBOSS,
+    ATTR_ENGRAVE,
 
-	ATTR_SUPER, ATTR_SUB,
-	ATTR_STRIKE,
-	ATTR_DBL_STRIKE,
+    ATTR_SUPER, ATTR_SUB,
+    ATTR_STRIKE,
+    ATTR_DBL_STRIKE,
 
-	ATTR_EXPAND,
-	ATTR_ENCODING,
-	/* ATTR_CONDENSE */
+    ATTR_EXPAND,
+    ATTR_ENCODING,
+    /* ATTR_CONDENSE */
 };
 
 typedef struct _c
 {
-	int nr;
-	const char *text;
-	struct _c *next;
+    int nr;
+    const char *text;
+    struct _c *next;
 } Collection;
 
 Collection *add_to_collection(Collection *col, int nr, const char *text);
@@ -103,6 +86,5 @@ char *attr_get_param(int attr);
 int safe_printf(int nr, char *string, ...);
 char *assemble_string(char *string, int nr);
 #define TOO_MANY_ARGS "Tag name \"%s\" do not take so many arguments"
-
 
 #endif /* _ATTR_H_INCLUDED_ */
