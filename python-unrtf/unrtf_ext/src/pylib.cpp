@@ -7,6 +7,10 @@
 
 #include "lib.h"
 
+namespace {
+const size_t MAX_INPUT_LENGTH = 1024 * 1024 * 256;
+}
+
 static PyObject * unrtf_(PyObject * self, PyObject * args) {
     char * input;
     int nopict_mode;
@@ -14,8 +18,7 @@ static PyObject * unrtf_(PyObject * self, PyObject * args) {
         return NULL;
     }
 
-    // XXX strlen is unsafe...
-    FILE * mfd_in = fmemopen(input, strlen(input), "r");
+    FILE * mfd_in = fmemopen(input, strnlen(input, MAX_INPUT_LENGTH), "r");
     int return_value = unrtf(mfd_in, !!nopict_mode);
     fflush(stdout);
     fclose(mfd_in);
