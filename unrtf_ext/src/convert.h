@@ -47,6 +47,7 @@ enum
 	CHARSET_CP850,
 };
 
+extern void convert_reset();
 extern void word_print(Word *);
 #define FONT_GREEK  "cp1253"
 #define FONT_SYMBOL "SYMBOL"

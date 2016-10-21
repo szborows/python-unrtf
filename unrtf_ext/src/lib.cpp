@@ -69,6 +69,7 @@ int unrtf(FILE * fp, bool nopict_mode_) {
     }
 
     nopict_mode = nopict_mode_;
+    convert_reset();
 
     total_fonts = 0;
     Word * word = word_read(fp);

@@ -132,6 +132,31 @@ void print_with_special_exprs(const char *s);
 
 static int banner_printed = FALSE;
 
+void
+convert_reset()
+{
+    my_iconv_t desc = MY_ICONV_T_CLEAR;
+
+    coming_pars_that_are_tabular = 0;
+    within_table = FALSE;
+    have_printed_row_begin = FALSE;
+    have_printed_cell_begin = FALSE;
+    have_printed_row_end = FALSE;
+    have_printed_cell_end = FALSE;
+
+    total_chars_this_line = 0;
+    within_picture = FALSE;
+    picture_file_number = 1;
+    picture_bits_per_pixel = 1;
+    picture_type = PICT_UNKNOWN;
+
+    EndNoteCitations = FALSE;
+
+    have_printed_body = FALSE;
+    within_header = TRUE;
+
+    hyperlink_base = NULL;
+}
 
 /*========================================================================
  * Name:    print_banner
